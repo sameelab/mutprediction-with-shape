@@ -85,8 +85,22 @@ This generates the basic 1st degree predictors.
 Next, use them to conduct polynomial transforms on predictors. 
 For this example, we will perform 2nd order transforms on nucleotide features.
 We will then bin the 1st order shape and 2nd order nucleotide features for our final predictor.
-Due to the amount of computation required, we will not show 2nd order transformation of shape features.
+Due to the amount of computation required, the code for 2nd order transformation of shape features is currently
+commented out by the following function; remove the extra function to run it.
 """
+
+run_shape2 = False
+# run_shape2 = True
+if run_shape2:
+    # Make 2nd order shape features, neighboring interactions only
+    Pred_2dneibr = make_2dshape_neighbor(Pred_shape_raw, Pred_shape_raw.columns)
+    # Minmax scaling
+    Labels_2dneibr = Pred_2dneibr.columns
+    Pred_2dneibr = MinMaxScaler(feature_range=(0, 1)).fit_transform(Pred_2dneibr)
+    # Reduce variance, note that it is advised to retain the variance reduction object for future use
+    Var_red_neibr = VarianceThreshold(threshold=0.01).fit(Pred_2dneibr)
+    Pred_2dneibr = Var_red_neibr.transform(Pred_2dneibr)
+    Labels_2dneibr = Var_red_neibr.transform(np.array(Labels_2dneibr).reshape(1, len(Labels_2dneibr)))[0]
 
 # Make 2d nucleotide features
 Pred_sc_2d, Labels_sc_2d = make_4dshape(Pred_sc_1d, Pred_sc_raw, degree=2)
