@@ -1,6 +1,6 @@
 # README
 ### Zian Liu
-#### 11/25/2020
+#### Last updated: 12/15/2020
 
 ## Description
 
