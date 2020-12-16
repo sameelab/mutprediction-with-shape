@@ -1,7 +1,7 @@
 # python 3
 # functions.py
 # Zian Liu
-# Last update: 11/24/2020
+# Last update: 12/16/2020
 
 """
 This is a script accompanying main.py for building machine learning models.
@@ -419,7 +419,7 @@ def plot_scatter_residual(predicted_Y, actual_Y, alpha_value=0.5, use_index=Fals
         plt.xlabel("Actual frequencies")
         if _iter in [3, 4]:
             plt.xscale('log')
-            plt.xlim(min(plotting_x)*1.05, max(plotting_x)*0.95)
+            #plt.xlim(min(plotting_x)*1.05, max(plotting_x)*0.95)
         else:
             plt.xlim(-0.01, max(plotting_x)+0.01)
         if _iter == 1:
@@ -428,7 +428,7 @@ def plot_scatter_residual(predicted_Y, actual_Y, alpha_value=0.5, use_index=Fals
             plt.ylim(min(plotting_y)*1.05, max(plotting_y)*1.05)
         elif _iter == 3:
             plt.yscale('log')
-            plt.ylim(min(plotting_x)*1.05, max(plotting_x)*0.95)
+            #plt.ylim(min(plotting_x)*1.05, max(plotting_x)*0.95)
         elif _iter == 4:
             plt.ylim(min(plotting_y)*1.05, max(plotting_y)*1.05)
     plt.show()

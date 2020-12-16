@@ -1,12 +1,12 @@
 # python 3
 # predictor_generation.py   Builds the machine learning model
 # Zian Liu
-# Last update: 11/25/2020
+# Last update: 12/16/2020
 
 
 """
 Call this script by:
-python3 main.py ./input/ben_data_7mer_bayesian_test_training_AFR_10 ./input/ref_7mers_structure_cpg.xlsx
+python main.py ./input/example_mutrates.txt ./input/ref_7mers_structure_cpg.xlsx
 
 In this script, we will give a demonstration of running our model and predicting mutation rates.
 We will use a relatively simple architecture of 1st order shape + 2nd order nucleotide features.
@@ -34,9 +34,12 @@ Note that these should be location 1 and location 2 of the command line input.
 
 ratefile_in = sys.argv[1]   # This is the mutation rate file
 shaperef = sys.argv[2]   # This is the DNAshapeR reference for 7-mers
-# If you prefer running these in an interpreter instead of calling from the command line,
-# Uncomment the following and use these to import the files instead.
-# ratefile_in = "../data_input/ben_data_7mer_bayesian_test_training_AFR_10"
+
+"""
+If you prefer running these in an interpreter instead of calling from the command line,
+uncomment the following and use these to import the files instead.
+"""
+# ratefile_in = "../data_input/example_mutrates.txt"
 # shaperef = "../data_input/ref_7mers_structure_cpg.xlsx"   # This is the location of the file
 
 
