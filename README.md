@@ -39,7 +39,7 @@ If you are using any data pertinent to the *DNAshape* method, the *DNAshapeR* pa
 
 For all other usages pertinent to our work, we don't currently have citation information; please stay tuned as we submit our manuscript to bioRxiv:
 
-* Liu, Z. * Samee, M. A. H. Mutation rate variations in the human genome are encoded in DNA shape. (pending)
+* Liu, Z. & Samee, M. A. H. Mutation rate variations in the human genome are encoded in DNA shape. (pending)
 
 
 ## Contact 
