@@ -1,6 +1,6 @@
 # Predicting mutation rate variations with DNA shape
 ### Zian Liu
-### Last updated: 12/19/2020
+### Last updated: 1/18/2020
 
 ## Introduction
 
@@ -41,9 +41,9 @@ If you are using any data pertinent to the *DNAshape* method, the *DNAshapeR* pa
 * Li, J. et al. Expanding the repertoire of DNA shape features for genome-scale studies of transcription factor binding. *Nucleic Acids Res 45*, 12877–12887 (2017).
 * Rao, S. et al. Systematic prediction of DNA shape changes due to CpG methylation explains epigenetic effects on protein–DNA binding. *Epigenetics & Chromatin 11*, 6 (2018).
 
-For all other usages pertinent to our work, we don't currently have citation information; please stay tuned as we submit our manuscript to bioRxiv:
+For all other usages pertinent to our work, our manuscript is currently under review. In the meantime, please cite the following submission in bioRxiv:
 
-* Liu, Z. & Samee, M. A. H. Mutation rate variations in the human genome are encoded in DNA shape. (pending)
+* Liu, Z. & Samee, M. A. H. Mutation rate variations in the human genome are encoded in DNA shape. *bioRxiv 2021.01.15.426837*. doi: https://doi.org/10.1101/2021.01.15.426837
 
 
 ## Contact 
