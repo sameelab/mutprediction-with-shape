@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This is the GitHub repository for the Liu Z and Samee MAH 2020 publication, Mutation rate variations in the human genome are encoded in DNA shape. The manuscript is currently being submitted to the American Journal of Human Genetics, and will be submitted to bioRxiv soon.
+This is the GitHub repository for the Liu Z and Samee MAH 2020 publication, Mutation rate variations in the human genome are encoded in DNA shape. The manuscript is currently under review and is submitted to bioRxiv (https://doi.org/10.1101/2021.01.15.426837); see the bottom of the page for citation information.
 
 This repo contains the main notebook for our publication, as well as other codes and snippets used for generating our final results. 
 
