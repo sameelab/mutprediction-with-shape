@@ -1,10 +1,10 @@
 # Predicting mutation rate variations with DNA shape
 ### Zian Liu
-### Last updated: 1/18/2020
+### Last updated: 4/13/2020
 
 ## Introduction
 
-This is the GitHub repository for the Liu Z and Samee MAH 2020 publication, Mutation rate variations in the human genome are encoded in DNA shape. The manuscript is currently under review and is submitted to bioRxiv (https://doi.org/10.1101/2021.01.15.426837); see the bottom of the page for citation information.
+This is the GitHub repository for the Liu Z and Samee MAH 2021 publication, Mutation rate variations in the human genome are encoded in DNA shape. The manuscript is currently under review and is submitted to bioRxiv (https://doi.org/10.1101/2021.01.15.426837); see the bottom of the page for citation information.
 
 This repo contains the main notebook for our publication, as well as other codes and snippets used for generating our final results. 
 
