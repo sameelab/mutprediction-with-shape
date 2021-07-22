@@ -8,6 +8,21 @@ This is the GitHub repository for the Liu Z and Samee MAH 2021 publication, Muta
 
 This repo contains the main notebook for our publication, as well as other codes and snippets used for generating our final results. 
 
+## Installation
+
+The program run on `python` version 3, the following packages are required:
+ * numpy
+ * pandas
+ * joblib
+ * sklearn
+along with relative dependencies.
+
+You can install it on debian based system with
+```
+sudo apt-get install python3-numpy python3-pandas python3-joblib python3-sklearn
+```
+ 
+
 ## What are the input data?
 
 For the mutation rates data, please request Dr. Benjamin F. Voight; their data is also available from Dr. Voight's GitHub (https://github.com/bvoight/mutvar_fwdRegr). We would **strongly encourage** you to first communicate with and request access from Dr. Voight and cite their study in the case you want to use their data. 
@@ -26,7 +41,7 @@ To run our model, call:
 
 ``python main.py input_mutation_file reference_dnashape_file.xlsx``
 
-from the example directory. The included README file will share more regarding what to do, and the script file is well annotated for you to follow.
+from the example directory, make sure that the `python` refer to python version 3. The included README file will share more regarding what to do, and the script file is well annotated for you to follow.
 
 ## Citations
 
