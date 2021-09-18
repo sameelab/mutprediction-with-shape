@@ -1,16 +1,16 @@
 # Predicting mutation rate variations with DNA shape
 ### Zian Liu
-### Last updated: 7/22/2021
+### Last updated: 9/18/2021
 
 ## Introduction
 
-This is the GitHub repository for the Liu Z and Samee MAH 2021 publication, Mutation rate variations in the human genome are encoded in DNA shape. The manuscript is currently under review and is submitted to bioRxiv (https://doi.org/10.1101/2021.01.15.426837); see the bottom of the page for citation information.
+This is the GitHub repository for the Liu Z and Samee MAH 2021 publication, Mutation rate variations in the human genome are encoded in DNA shape. The manuscript is currently under review and is submitted to bioRxiv (https://www.biorxiv.org/content/10.1101/2021.01.15.426837v2); see the bottom of the page for citation information.
 
 This repo contains the main notebook for our publication, as well as other codes and snippets used for generating our final results. 
 
 ## Installation
 
-The program run on `python` version 3, the following packages are required:
+The program runs on `python` version 3, the following packages are required:
  * numpy
  * pandas
  * joblib
@@ -42,6 +42,10 @@ To run our model, call:
 ``python main.py input_mutation_file reference_dnashape_file.xlsx``
 
 from the example directory, make sure that the `python` refer to python version 3. The included README file will share more regarding what to do, and the script file is well annotated for you to follow.
+
+## Where are your TFBS analyses?
+
+We have included our TFBS analysis scripts in one of the directories. Please don't hesitate to reach back to Zian if the files seem confusing.
 
 ## Citations
 
