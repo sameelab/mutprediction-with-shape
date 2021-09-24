@@ -1,4 +1,7 @@
-### Motif processing
+## Motif processing
+### Last updated: 9/24/2021
+
+This directory describes scripts and data required for Figure 5, or the transcription factor binding sites analysis (TFBS) portion, of our paper.
 
 Due to size restrictions on GitHub, nearly all of our generated files have been removed. The following describes (to the best of my knowledge) how to reproduce our analyses from scratch.
 
@@ -17,7 +20,7 @@ As you can see, the PBS job files are named after the order they should be run.
 * Step 6: Main data analysis file.
 * Step 7: Analyzes mutation rate fold changes within each TFBS.
 
-For the rest of the files in this directory: 
+Remaining files in this directory: 
 * binding_count.txt: This file shows how many times each TFBS occurred in the entire genome.
 * mutrate_ratio_tf.txt: This is the output of Step 7.
 * script_\*: **IMPORTANT!** These are the scripts that process our data, whereas the numbered PBS scripts are more like job submission commands. Make sure to not remove them or change their names.
