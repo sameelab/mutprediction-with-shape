@@ -1,0 +1,38 @@
+#!/bin/bash
+#PBS -l vmem=24GB
+#PBS -l walltime=24:00:00
+#PBS -N trim_shapes_shorter
+#PBS -m e
+#PBS -M zian.liu@bcm.edu
+#PBS -o /mount/samee/zianl_overflow/motif_seqcon/
+#PBS -e /mount/samee/zianl_overflow/motif_seqcon/
+
+cd $PBS_O_WORKDIR
+
+echo "Script begins at directory "$PBS_O_WORKDIR
+echo "Trims shape DFs based on count/boolean subtraction"
+
+
+# Variable names
+DirShape="motifshapes/"
+DirBool="motifbedcounts_acc/"
+DirOut="motifshapes_acc/"
+TFnames="uniq_motifnames_trimmed.txt"
+
+# Main loop
+for TF in $(cat $TFnames); do
+
+  File="shape_"$TF".csv"
+  BFile=$TF".count"
+
+  echo "Current file being processed: $File"
+
+  # Make linenumber temp file, note that the first row is always colnames, and each row is adjusted by +1 accordingly
+  awk 'BEGIN {print "1"} ($1 > 0) {print NR+1}' $DirBool$BFile > _tmp_NRs.txt 
+
+  # Trim shape files with the previous line number file
+  awk 'NR==FNR{a[FNR]=$0;next} {if (FNR in a) print}' _tmp_NRs.txt $DirShape$File > $DirOut$File
+
+  rm _tmp_NRs.txt
+
+done

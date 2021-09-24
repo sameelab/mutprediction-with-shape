@@ -1,0 +1,24 @@
+#!/bin/bash
+#PBS -l vmem=8GB
+#PBS -l walltime=6:00:00
+#PBS -N split_motifbeds
+#PBS -o /mount/samee/zianl_overflow/motif_seqcon/
+#PBS -e /mount/samee/zianl_overflow/motif_seqcon/
+
+cd $PBS_O_WORKDIR
+ls
+
+In="motifs_tf.bed"
+Out="motifbeds/"
+
+# Make a file of all unique motif names; retain this file
+#cut -f4 $In | sort | uniq > uniq_motifnames.txt
+
+# For each TF, get name
+#for Tfname in $(cat uniq_motifnames.txt); do
+for Tfname in $(cat uniq_motifnames_trimmed.txt | sed -n '1201,$p'); do
+
+  #grep -P "\t"$Tfname"\t" $In > $Out"motifs_"$Tfname".bed"
+  awk -v TF="$Tfname" '$4 == TF {print}' $In > $Out"motifs_"$Tfname".bed"
+
+done

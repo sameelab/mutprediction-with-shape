@@ -1,0 +1,31 @@
+#!/bin/bash
+#PBS -l vmem=24GB
+#PBS -l walltime=24:00:00
+#PBS -N trim_beds_2_intersect
+#PBS -m e
+#PBS -M zian.liu@bcm.edu
+#PBS -o /mount/samee/zianl_overflow/motif_seqcon/
+#PBS -e /mount/samee/zianl_overflow/motif_seqcon/
+
+cd $PBS_O_WORKDIR
+
+echo "Script begins at directory "$PBS_O_WORKDIR
+
+
+module load bedtools/2.29.2
+
+# Variable names
+DirIn="motifmutlocs/"
+DirOut="motifmutlocs_acc/"
+Intersectbed="/mount/samee/BEDs_common/hg19/dnase1hs_master_hmm_hg19.bed"
+TFnames="uniq_motifnames_trimmed.txt"
+
+# Main loop
+#for File in $(ls $DirIn); do
+for TF in $(cat $TFnames); do
+
+  File="mutdists_"$TF".bed"
+  echo "Current file being processed: $File"
+  bedtools intersect -a $DirIn$File -b $Intersectbed -wa > $DirOut$File
+
+done

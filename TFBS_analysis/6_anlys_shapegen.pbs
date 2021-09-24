@@ -1,0 +1,38 @@
+#!/bin/bash
+#PBS -l vmem=24GB
+#PBS -l walltime=24:00:00
+#PBS -N analyze_shapes
+#PBS -o /mount/samee/zianl_overflow/motif_seqcon/
+#PBS -e /mount/samee/zianl_overflow/motif_seqcon/
+#PBS -m e
+#PBS -M zian.liu@bcm.edu
+
+cd $PBS_O_WORKDIR
+ls
+
+
+# Load modules
+
+# Environmental variables
+dir_logos="logos/motif_"
+
+#dir_shapes="motifshapes/shape_"
+#dir_muts="motifmutlocs/mutdists_"
+#dir_out="stats/summary_"
+
+dir_shapes="motifshapes_acc/shape_"
+dir_muts="motifmutlocs_acc/mutdists_"
+dir_out="stats_acc/summary_"
+
+
+# Main script, run python script for each TF name
+for TF in $(cat uniq_motifnames_trimmed.txt); do
+#for TF in $(cat uniq_intersect_vista_gt200.txt); do
+  shape=$dir_shapes$TF".csv"
+  mut=$dir_muts$TF".bed"
+  logo=$dir_logos$TF".txt"
+  Out=$dir_out$TF".csv"
+
+  python script_TFBS_analysis_pipeline.py $shape $mut $logo $Out
+
+done

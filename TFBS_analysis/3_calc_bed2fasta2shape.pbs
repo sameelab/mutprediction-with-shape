@@ -1,0 +1,37 @@
+#!/bin/bash
+#PBS -l vmem=24GB
+#PBS -l walltime=96:00:00
+#PBS -N bed_fasta_shape
+#PBS -o /mount/samee/zianl_overflow/motif_seqcon/
+#PBS -e /mount/samee/zianl_overflow/motif_seqcon/
+
+cd $PBS_O_WORKDIR
+ls
+
+# Load modules
+module load bedtools/2.29.2
+module load R/4.0.3
+
+# Environmental variables
+dir_beds="motifbeds/*.bed"
+dir_fas="motiffas/"
+dir_shapes="motifshapes/"
+Genome="/mount/samee/Genomes/hg19_ucsc/hg19.fa"
+
+# Main script for getting fasta, need to extend by 2 bases
+#for BEDF in $(ls $dir_beds); do
+for BEDF in $(cat temp_bedlist.txt); do
+  # Define output region
+  Out=$(echo ${BEDF##*/} | sed 's/\.bed/.fa/')
+  # Add buffer region, then translate to fasta
+  cat $BEDF |\
+  awk 'OFS="\t" {print $1,$2-2,$3+2,$4,$5,$6}' |\
+  bedtools getfasta \
+    -fi "$Genome" \
+    -bed stdin \
+    -fo "$dir_fas$Out" \
+    -s
+done
+
+# Translate fastas to shapes via R script
+Rscript script_fasta2shape.R $dir_fas $dir_shapes

@@ -1,0 +1,34 @@
+#!/bin/bash
+#PBS -l vmem=24GB
+#PBS -l walltime=24:00:00
+#PBS -N analyze_mutrates
+#PBS -o /mount/samee/zianl_overflow/motif_seqcon/
+#PBS -e /mount/samee/zianl_overflow/motif_seqcon/
+#PBS -m e
+#PBS -M zian.liu@bcm.edu
+
+cd $PBS_O_WORKDIR
+
+
+# Load modules
+
+# Environmental variables
+dir_logos="logos/motif_"
+
+dir_shapes="motifshapes/shape_"
+dir_muts="motifmutlocs/mutdists_"
+dir_out="stats/summary_"
+
+fileout="mutrate_ratio_tf.txt"
+
+touch $fileout
+
+for TF in $(cat uniq_motifnames_trimmed.txt); do
+  shape=$dir_shapes$TF".csv"
+  mut=$dir_muts$TF".bed"
+  logo=$dir_logos$TF".txt"
+  Out=$dir_out$TF".csv"
+
+  python script_TFBS_mutrates.py $shape $mut $logo $Out
+
+done

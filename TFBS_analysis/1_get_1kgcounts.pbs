@@ -1,0 +1,24 @@
+#!/bin/bash
+#PBS -l vmem=24GB
+#PBS -l walltime=72:00:00
+#PBS -N region_counts_tfbs
+#PBS -M zian.liu@bcm.edu
+#PBS -o /mount/samee/zianl_overflow/motif_seqcon/
+#PBS -e /mount/samee/zianl_overflow/motif_seqcon/
+
+cd $PBS_O_WORKDIR
+ls
+
+# Add mutratepkg to PATH
+export PATH=/mount/samee/zianl_overflow/VCF_processing_update/bin/:$PATH
+
+# Add modules
+module load bedtools/2.29.2
+module load bedops/2.4.2
+
+mutratepkg count-kmerregion \
+  -c "motifbeds/*.bed" \
+  -G "/mount/samee/Genomes/hg19_ucsc/hg19.fa" \
+  -k 7 \
+  --all-chromosome \
+  -o "./counts/"
