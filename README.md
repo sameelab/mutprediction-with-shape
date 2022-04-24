@@ -1,6 +1,6 @@
 # Predicting mutation rate variations with DNA shape
 ### Zian Liu
-### Last updated: 9/24/2021
+### Last updated: 4/24/2022
 
 ## Introduction
 
@@ -31,7 +31,7 @@ For the *DNAshapeR* package, please visit [Tsu-Pei Chiu's GitHub page](http://ts
 
 ## How can I run this for myself?
 
-We have included our main Jupyter notebook ("Publication_note.ipynb") as a reference document. We have separately prepared an example pipeline in the "pipeline_example" directory. 
+We have included our main Jupyter notebook ("Publication_note.ipynb") and the components (different "Notebook" ipynbs and the functions script) as reference documents. We have separately prepared an example pipeline in the "pipeline_example" directory. 
 
 To run our model, call:
 
