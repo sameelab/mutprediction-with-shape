@@ -1,12 +1,17 @@
 # Predicting mutation rate variations with DNA shape
 ### Zian Liu
-### Last updated: 4/24/2022
+### Last updated: 7/5/2022
 
 ## Introduction
 
 This is the GitHub repository for the Liu Z and Samee MAH 2021 (pending) publication, Mutation rate variations in the human genome are encoded in DNA shape. The manuscript is currently under review and is submitted to bioRxiv (https://www.biorxiv.org/content/10.1101/2021.01.15.426837v2); see the bottom of the page for citation information.
 
 This repo contains the main notebook for our publication, codes and snippets used for generating our final results, as well as scripts used for our TFBS analysis section.
+
+## Workflow
+
+Our workflow are documented in the various .ipynb notebooks located in the **Notebook/** directory. Make sure to download the python library script, and either a) the individual numbered notebooks for individual steps or 2) Publication_note.ipynb for all the steps.
+
 
 ## Installation
 
